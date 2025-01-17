@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is it Prime?</title>
+</head>
+<body>
+    <form id="form">
+        <h1>Is it prime?</h1>
+        <input id="userNumber" type="number">
+        <button type="submit" id="submit">Submit</button>
+    </form>
+
+    <script>
+        let form = document.getElementById("form");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();  // Prevent form from reloading the page
+
+            let userNumber = parseInt(document.getElementById("userNumber").value);  // Get the input value as a number
+
+            if (isNaN(userNumber)) {
+                window.alert("Please enter a valid number.");
+                return;
+            }
+
+            if (userNumber <= 1) {
+                window.alert("This number is not prime.");
+                return;
+            }
+            if (userNumber === 2) {
+                window.alert("This number is prime.");
+                return;
+            }
+            if (userNumber % 2 === 0) {
+                window.alert("This number is not prime.");
+                return;
+            }
+            for (let i = 3; i <= Math.sqrt(userNumber); i += 2) {
+                if (userNumber % i === 0) {
+                    window.alert("This number is not prime.");
+                    return;
+                }
+            }
+
+            window.alert("This number is prime.");
+        });
+    </script>
+</body>
+</html>
