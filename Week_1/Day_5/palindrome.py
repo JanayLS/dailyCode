@@ -1,7 +1,7 @@
 # Create a function called palindrome
 def palindrome ():
     # gets a word from user
-    user_word = input("Enter a word: ")
+    user_word = input("Enter a word: ").lower()
     # take input and reverses it
     new_word = user_word[::-1]
     # checks to see if word reversed is the same as the original word. If so, it prints that it is a palindrome.
@@ -13,3 +13,4 @@ def palindrome ():
         
 # Calls function
 palindrome()
+
