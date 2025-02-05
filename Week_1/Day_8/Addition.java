@@ -33,4 +33,5 @@ class Addition {
         // END
         }
     }
+    scanner.close();
 }
